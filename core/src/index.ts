@@ -7,10 +7,12 @@ export const genesisBlock = new Block(
 	'816534932c2b7154836da6afc367695e6337db8a921823784c14378abed4f7d7',
 	'000000',
 	1465154705,
-	'Genesis block'
+	'Genesis block',
+	0,
+	0
 );
 
-let blockchain: BlockT[] = [genesisBlock];
+export let blockchain: BlockT[] = [genesisBlock];
 
 export const getBlockchain = () => blockchain;
 

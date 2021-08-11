@@ -1,6 +1,7 @@
 import { calculateHashForBlock } from '.';
 import { Block as BlockT } from '../types';
 import { genesisBlock } from '../src/index';
+import { hexToBinary } from './utils';
 
 export const isNewBlockValid = (newBlock: BlockT, previousBlock: BlockT) => {
 	if (newBlock.index !== previousBlock.index + 1) {
@@ -48,4 +49,13 @@ export const isBlockchainValid = (blockchain: BlockT[]): boolean => {
 		}
 	}
 	return true;
+};
+
+export const hashMatchesDifficulity = (
+	hash: string,
+	difficulity: number
+): boolean => {
+	const hashInBinary = hexToBinary(hash);
+	const requiredPrefix = '0'.repeat(difficulity);
+	return hashInBinary.startsWith(requiredPrefix);
 };

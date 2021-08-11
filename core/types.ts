@@ -4,4 +4,6 @@ export type Block = {
 	previousHash: string;
 	timestamp: number;
 	data: string;
+	difficulity: number;
+	nonce: number;
 };

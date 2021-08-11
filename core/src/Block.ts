@@ -6,6 +6,8 @@ export class Block implements BlockT {
 		public hash: string,
 		public previousHash: string,
 		public timestamp: number,
-		public data: string
+		public data: string,
+		public difficulity: number,
+		public nonce: number
 	) {}
 }
