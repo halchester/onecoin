@@ -1,5 +1,5 @@
-import express from 'express';
-import { getBlockchain } from '../src';
+import * as express from 'express';
+import { getBlockchain } from './blockchain';
 
 const initHttpServer = (port: number) => {
 	const app = express();
